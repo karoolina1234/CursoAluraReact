@@ -5,16 +5,19 @@ import App from './App';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';    //Baixei outro porque a versão é diferente porque atualizou por causa do mobile
 import * as serviceWorker from './serviceWorker';
 import AutorBox from './Autor';
+import Home from './Home';
+import LivroBox from './Livros';
 
 ReactDOM.render(
     (<BrowserRouter>  
         <Switch>
-            <Route exact path="/" component={App}/>
+            <App>
+            <Route path="/home" component={Home}/>
             <Route path="/autor" component={AutorBox} />
-            <Route path="/livro"/>
+            <Route path="/livro" component={LivroBox}/>
+            </App>   
         </Switch>
     </BrowserRouter>),
     document.getElementById('root'));
-
 
 serviceWorker.unregister();

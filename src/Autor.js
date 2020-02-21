@@ -51,6 +51,8 @@ import TratadorErros from './TratadorErros';
       }
 render(){
    return(
+
+  
     <div className="pure-form pure-form-aligned">
     <form className="pure-form pure-form-aligned" onSubmit={this.enviaForm} method="post">
       <InputCustomizado id="nome" type="text" name="nome" value={this.state.nome} onChange={this.setNome} label="Nome"/>                                              
@@ -123,8 +125,15 @@ export default class AutorBox extends Component{
     render(){
         return(
             <div>
+
+        <div className="header">
+            <h1>Cadastro de autores</h1>
+        </div>
+        <div className="content" id="content">
             <FormularioAutor />
             <TabelaAutores lista={this.state.lista}/>
+        </div>
+            
             </div>
         );
     }
